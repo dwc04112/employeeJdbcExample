@@ -76,7 +76,7 @@ public class InputUtil {
             if(idIsExist(usrSelectedId, employees)){        // 존재하는 학생의 id인지?
                 return usrSelectedId;
             } else {
-                System.out.println("존재하지 않는 학생 id 입니다. id 번호를 선택하시오.");
+                System.out.println("존재하지 않는 사원번호 입니다.  사원번호를 선택하시오.");
             }
 
             } while (!idIsExist(usrSelectedId, employees));
@@ -104,7 +104,7 @@ public class InputUtil {
 
     private void printInfo() {
         System.out.println("아래 내용중 선택하세요.");
-        System.out.println("1: 20명의 사원 조회");
+        System.out.println("1: 조회할 사원번호 범위를 지정해주세요");
         System.out.println("3: 사원번호 선택하여 변경");
     }
 }
