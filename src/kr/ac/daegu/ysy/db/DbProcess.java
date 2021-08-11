@@ -1,5 +1,6 @@
 package kr.ac.daegu.ysy.db;
 
+import jdk.internal.util.xml.impl.Input;
 import kr.ac.daegu.ysy.core.Menu;
 import kr.ac.daegu.ysy.input.InputUtil;
 
@@ -71,6 +72,7 @@ public class DbProcess {
 
         pstmt = conn.prepareStatement("select * from employees where emp_no between ? and ?");
         //?가 들어간 쿼리에 어떤값을 넣을건지  > 동적 쿼리
+        /*
         int a,b;
         do{
             System.out.print("첫번째 입력 : ");
@@ -85,8 +87,30 @@ public class DbProcess {
         }while(a >= b);
         System.out.println("사원번호 "+ a +" 부터 " + b + " 까지 출력합니다.");
 
-        pstmt.setInt(1,a);
-        pstmt.setInt(2,b);
+         */
+
+        int a=0; int b=0;
+        int firstRange = InputUtil.firstScanRange(a);
+        int lastRange = InputUtil.lastScanRange(b);
+        //int comRange = InputUtil.compareRange(firstRange,lastRange);
+        do{
+            System.out.println("첫번째 값이 두번째 값보다 클 수 없습니다");
+            System.out.println("범위를 다시 지정해주세요.");
+            firstRange = InputUtil.firstScanRange(a);
+            lastRange = InputUtil.lastScanRange(b);
+        }while(firstRange>=lastRange);
+        System.out.println("사원번호 "+ firstRange +" 부터 " + lastRange + " 까지 출력합니다.");
+
+        //값 비교하는 부분 0811에 수정해야함 -------------------
+
+
+
+
+
+
+        pstmt.setInt(1,firstRange);
+        pstmt.setInt(2,lastRange);
+
         rs = pstmt.executeQuery();
         /* 쿼리날린 결과를 가지고 콘솔에 출력한다. */
         while(rs.next()){

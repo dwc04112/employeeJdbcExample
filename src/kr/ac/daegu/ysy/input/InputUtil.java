@@ -19,6 +19,45 @@ public class InputUtil {
         return result;
     }
 
+    //===========================0810=====================
+    public static int firstScanRange(int a) {
+        System.out.print("첫번째 입력 : ");
+        Scanner num1 = new Scanner(System.in);
+        a= num1.nextInt();
+        return a;
+    }
+    public static int lastScanRange(int b) {
+        System.out.print("두번째 입력 : ");
+        Scanner num2 = new Scanner(System.in);
+        b= num2.nextInt();
+        return b;
+    }
+    //값 비교하는 부분 0811에 수정해야함 -------------------
+    /*
+    public static int compareRange(int a,int b){
+        do {
+            System.out.println("첫번째 값이 두번째 값보다 클 수 없습니다");
+            System.out.println("범위를 다시 지정해주세요.");
+            System.out.print("첫번째 입력 : ");
+            Scanner num1 = new Scanner(System.in);
+            a= num1.nextInt();
+            System.out.print("두번째 입력 : ");
+            Scanner num2 = new Scanner(System.in);
+            b= num2.nextInt();
+
+            } while(a>=b);
+        System.out.println("사원번호 " + a + " 부터 " + b + " 까지 출력합니다.");
+        return a;
+        //비교 > 메시지 출력 후
+        //a값이 b값보다 클때 값을 다시 받고 dbProcess로 넘겨야하는데
+        //넘겨야 할 값이 2개라서 return불가
+    }
+
+     */
+
+
+    //=====================0810===================================
+
 
 
 
@@ -92,6 +131,8 @@ public class InputUtil {
         }
         return false;
     }
+
+
 
 
 
